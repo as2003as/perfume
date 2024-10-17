@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Ekskluzivitet</title>
+</head>
+<body>
+  <a href="index.html">  <img class="logo" src="logo1.png"> </a>
+    <div class="all">
+    <h2> Çka ofron MAD Parfume?  
+        <br> <br>
+
+   
+    
+    </h2>
+  
+    <ul> <h3> Aromat e personalizuara </h3>
+        <li>
+            "Ekskluziviteti i aromës suaj personale. Krijoni parfumin tuaj të personalizuar me përbërësit që ju preferoni."
+      <li>  "Vetëm për ju: Një parfum i krijuar sipas shijes tuaj, që nuk do ta gjeni askund tjetër." </li>
+        </li>
+        <li>"Rezervo parfumet tona ekskluzive, të krijuara vetëm për ata që kërkojnë të dallohen."</li>
+    </ul>
+<ul><h3>Lëndë të para të rralla dhe cilësi e lartë </h3>
+    <li>"Një përzierje e rrallë me esenca të përzgjedhura me kujdes nga cepa të ndryshëm të botës."</li>
+    <li>"Aromë ekskluzive e krijuar me përbërës që gjenden vetëm në disa vende të veçanta."</li>
+</ul>
+<ul>
+  <h3>  Përvoja unike e blerjes </h3>
+ <li>"Përjetoni një seancë private aromatike dhe zbuloni parfumin që përshtatet më mirë me personalitetin tuaj."</li>
+ <li>"Shërbim me përkushtim të veçantë për të krijuar një përvojë blerjeje të personalizuar dhe ekskluzive."</li>
+</ul>
+<!-- </div>
+<h1>Order Your Favorite Perfume</h1>
+<form id="order-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="perfume">Select Perfume:</label>
+    <select id="perfume" name="perfume" required>
+        <option value="rose">Rose</option>
+        <option value="jasmine">Jasmine</option>
+        <option value="vanilla">Vanilla</option>
+        <option value="lavender">Lavender</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" required>
+
+    <label for="message">Message (optional):</label>
+    <textarea id="message" name="message" rows="4" placeholder="Any special requests?"></textarea>
+    
+    <button type="submit">Order Now</button>
+</form>
+
+    body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+} -->
+<style>
+  .all{
+    text-align: center;
+    padding-top: 10px;
+    
+  }
+  .logo{
+            width: 300px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+</style>
+
+<script>
+    document.getElementById('order-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const perfume = document.getElementById('perfume').value;
+    const quantity = document.getElementById('quantity').value;
+    const message = document.getElementById('message').value;
+    
+    const orderDetails = {
+        name,
+        email,
+        perfume,
+        quantity,
+        message
+    };
+    
+    console.log('Order Details:', orderDetails);
+    alert('Your order has been submitted! We will contact you shortly.');
+    
+    // Here, you would typically send the data to a server:
+    // fetch('your-backend-endpoint', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(orderDetails),
+    // }).then(response => response.json())
+    //   .then(data => console.log('Success:', data))
+    //   .catch((error) => console.error('Error:', error));
+});
+
+</script>
+</body>
+</html>

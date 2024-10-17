@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS5k-QucjzKDLZqd6M1OYJ5oajsYQZ5QY&callback=initMap" async defer></script>
+    <title>About Us</title>
+</head>
+<body>
+  <a href="index.html">  <img class="logo" src="logo1.png"> </a>
+  
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    
+        <div class="container-fluid">
+          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html" style="text-align: center;"><u>Home</u></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="female.html" style="text-align: center;"><u> Women </u> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="unisex.html" style="text-align: center;"> <u> Unisex </u> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="men.html" style="text-align: center;"> <u> Man </u> </a>
+              </li>
+              <li class="nav-item dropdown">
+                <!-- Add more items if needed -->
+              </li>
+            </ul>
+            <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+            <div class="search-container">
+              <input type="text" id="searchInput" placeholder="Search for a perfume...">
+              <div id="suggestions"></div>
+          </div>
+          <div id="results"></div>
+          </div>
+        </div>
+      </nav>
+
+      <br>
+      <h3>Na Vizitoni</h3>
+      <ul>
+       <a href="https://www.google.com/maps/place/Sheshi+Fehmi+Lladrovci+Drenas/@42.6228065,20.8903076,17.06z/data=!4m15!1m8!3m7!1s0x13536ff2c8b26b7d:0x67df2f355e7e8d3b!2sSheshi,+Drenas!3b1!8m2!3d42.6226179!4d20.892732!16s%2Fg%2F11bw3gzhxt!3m5!1s0x13536f694e4d6213:0xeda2dd365afe71a1!8m2!3d42.6226774!4d20.8927972!16s%2Fg%2F11kj_t6chj?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D"> </a>
+        <li>Lokacioni</li>  
+        <p><i class="fa-solid fa-location-dot fa-xl" style="color: #449b61;"></i>  Sheshi i Drenasit Fehmi e Xheve Lladrovci</p>
+         <li> Na Kontaktoni</li>
+        <p><i class="fa-solid fa-phone fa-xl" style="color: #449b61;"></i>  +383 49 167 227</p>
+      </ul>
+
+     <div class="insta">
+
+     <a href="https://www.instagram.com/madperfume.ks/"> <i class="fa-brands fa-instagram fa-2xl" style="color: #449b61;"></i> </a>
+    </div>
+
+
+
+
+
+      <div id="map"></div>
+
+
+      <style>
+        .insta{
+            justify-content: center;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 10px;    
+        }
+         #map {
+            height: 500px; /* Adjust height as needed */
+            width: 100%; /* Full width */
+            border: 2px solid rgb(38, 73, 38);
+        }
+        .logo{
+            width: 300px;
+            text-align: center;
+            display: block;
+    margin-left: auto;
+    margin-right: auto;
+        }
+        
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 300px;
+    background-color: #fff;
+    border: 2px solid #8fdb8c;
+}
+
+#suggestions {
+    background-color: #fff;
+    /* border: 1px solid #ddd; */
+    width: 300px;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    top: 40px;
+    z-index: 1000;
+}
+
+#suggestions p {
+    padding: 8px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#suggestions p:hover {
+    background-color: #f0f0f0;
+}
+
+#results {
+    margin-top: 20px;
+    text-align: center;
+}
+      </style>
+      <script>
+        
+const perfumes = [
+    "Chanel No. 5",
+    "Dior J'adore",
+    "Armani Si",
+    "Lancome La Vie Est Belle",
+    "Armani - My way",
+    "YSL - Libre",
+    "Jean Paul Gaultier - Scandal",
+    "Carolima Herrera - Good Girl",
+    "Prada - Prada Paradox",
+    "YSL - Black Opium ",
+    "Dior - Miss Dior",
+    "Prada - Candy",
+    "Paris Hillton",
+    "Kilian - Good Girl Gone Bad",
+    "Victoria Secret - Love is heavenly",
+    "Tizania Terenzi - Orza",
+    "Mugler - Alien",
+    "Dior - Hypnotic Poison",
+    "Roberto Cavalli - Just Cavalli ",
+    "Gucci - Gucci Rush",
+    "Dolce & Gabbana - D&G",
+    "Versace - Bright Crystal",
+    "Dolce & Gabbana - L'eau the one",
+    "Moschino - Gold Fresh Couture",
+    "Carolina Herrera - 212 Sexy",
+
+
+
+
+];
+
+// Get references to input, suggestions div, and results div
+const searchInput = document.getElementById('searchInput');
+const suggestionsDiv = document.getElementById('suggestions');
+const resultsDiv = document.getElementById('results');
+
+// Function to search and display results
+function searchPerfumes(query) {
+    // Filter perfumes that include the search query
+    const filteredPerfumes = perfumes.filter(perfume =>
+        perfume.toLowerCase().includes(query)
+    );
+
+    // Display the results
+    resultsDiv.innerHTML = '';
+    if (filteredPerfumes.length > 0) {
+        filteredPerfumes.forEach(perfume => {
+            const perfumeElement = document.createElement('p');
+            perfumeElement.textContent = perfume;
+            resultsDiv.appendChild(perfumeElement);
+        });
+    } else {
+        resultsDiv.textContent = 'No perfumes found.';
+    }
+}
+
+// Function to display suggestions as user types
+function showSuggestions() {
+    const query = searchInput.value.toLowerCase();
+
+    // Clear previous suggestions
+    suggestionsDiv.innerHTML = '';
+
+    if (query) {
+        // Filter perfumes based on the query
+        const filteredPerfumes = perfumes.filter(perfume =>
+            perfume.toLowerCase().includes(query)
+        );
+
+        // Display suggestions
+        filteredPerfumes.forEach(perfume => {
+            const suggestionElement = document.createElement('p');
+            suggestionElement.textContent = perfume;
+
+            // Add click event to suggestion for auto-fill and search
+            suggestionElement.addEventListener('click', () => {
+                searchInput.value = perfume;
+                suggestionsDiv.innerHTML = ''; // Clear suggestions
+                searchPerfumes(query); // Display the search results
+            });
+
+            suggestionsDiv.appendChild(suggestionElement);
+        });
+    }
+}
+
+// Add event listener to the input field to show suggestions
+searchInput.addEventListener('input', showSuggestions);
+
+// Optional: Trigger search when pressing 'Enter' in the input field
+searchInput.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+        const query = searchInput.value.toLowerCase();
+        searchPerfumes(query);
+        suggestionsDiv.innerHTML = ''; // Clear suggestions
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function initMap() {
+            // Map options
+            var options = {
+                center: { lat: 42.626, lng: 20.911 }, // Coordinates for Sheshi Fehmi Lladrovci, Drenas, Kosovo
+                zoom: 15 // Adjust zoom level as needed
+            };
+
+            // Create a new map
+            var map = new google.maps.Map(document.getElementById("map"), options);
+
+            // Add a marker at the center of the map
+            var marker = new google.maps.Marker({
+                position: options.center,
+                map: map,
+                title: 'Sheshi Fehmi Lladrovci, Drenas, Kosovo'
+            });
+        }
+      </script>
+</body>
+</html>
